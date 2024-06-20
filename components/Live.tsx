@@ -8,7 +8,10 @@ import FlyingReaction from "./reaction/FlyingReaction";
 import useInterval from "@/hooks/useInterval";
 import { Timestamp } from "@liveblocks/react-comments/primitives";
 
-const Live = () => {
+type Props = {
+    canvasRef: React.MutableRefObject<HTMLCanvasElement | null>;
+}
+const Live = ({canvasRef}: Props) => {
     const others = useOthers();
     const [{cursor}, updateMyPresence] = useMyPresence() as any;
 
@@ -122,8 +125,8 @@ const Live = () => {
 
 
   return (
-    <div onPointerMove={handlePointerMove} onPointerLeave={handlePointerLeave} onPointerDown={handlePointerDown} onPointerUp={handlePointerUp} className="h-[100vh] w-full flex justify-center items-center text-center">
-        <h1 className="text-2xl text-white">This is figma clone</h1>
+    <div id="canvas" onPointerMove={handlePointerMove} onPointerLeave={handlePointerLeave} onPointerDown={handlePointerDown} onPointerUp={handlePointerUp} className="h-[100vh] w-full flex justify-center items-center text-center">
+        <canvas ref={canvasRef}/>
         
 
         {reactions.map((r)=>(
