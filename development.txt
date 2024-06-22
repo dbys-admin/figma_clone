@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=oKIThIihv60&t=6386s
+
 06/07: 44/12 까지 봄
 
 06/09: 1:15 까지 봄
@@ -6,3 +8,23 @@
 06/20: 2:33 까지 봄
 
 06/20: 2:41 까지 봄
+
+06/21: 03:13 까지 봄
+
+
+
+1. 이거 끝나면
+https://www.youtube.com/watch?v=LDB4uaJ87e0
+이거 보고 React 공부 다시 하기
+
+2. https://www.youtube.com/watch?v=_8M-YVY76O8
+리액트 프로젝트 한번 진행
+
+3. React Feature 한번 확인
+https://www.youtube.com/watch?v=EPaLg4U_K1o
+
+4. Next JS Dashboard 만들기
+https://www.youtube.com/watch?v=hhudoSMM0yU
+
+5. 더 복작합 Dashboard 만들기
+https://www.youtube.com/watch?v=jx5hdo50a2M
