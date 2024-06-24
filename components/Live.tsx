@@ -1,7 +1,7 @@
-import { useBroadcastEvent, useEventListener, useMyPresence, useOthers } from "@/liveblocks.config";
+import { useBroadcastEvent, useEventListener, useMyPresence } from "@/liveblocks.config";
 import LiveCursors from "./cursor/LiveCursors"
 import { useCallback, useEffect, useState } from "react";
-import { CursorMode, CursorState, Reaction, ReactionEvent } from "@/types/type";
+import { CursorMode, CursorState, Reaction } from "@/types/type";
 import CursorChat from "./cursor/CursorChat";
 import ReactionSelector from "./reaction/ReactionButton";
 import FlyingReaction from "./reaction/FlyingReaction";
@@ -26,8 +26,7 @@ type Props = {
     redo: ()=> void;
 }
 const Live = ({canvasRef, undo, redo}: Props) => {
-    const others = useOthers();
-    const [{cursor}, updateMyPresence] = useMyPresence() as any;
+    const [{cursor}, updateMyPresence] = useMyPresence();
 
     const [cursorState, setCursorState] = useState<CursorState>({
         mode: CursorMode.Hidden,
@@ -59,7 +58,7 @@ const Live = ({canvasRef, undo, redo}: Props) => {
     }, 100);
 
     useEventListener((eventData)=>{
-        const event = eventData.event as ReactionEvent;
+        const event = eventData.event;
 
         setReactions((reactions)=> reactions.concat([
             {
@@ -182,7 +181,7 @@ const Live = ({canvasRef, undo, redo}: Props) => {
             {cursorState.mode === CursorMode.ReactionSelector && 
                 (<ReactionSelector setReaction={setReaction}
                 />)}
-            <LiveCursors others={others}/>
+            <LiveCursors />
             <Comments />
         </ContextMenuTrigger>
         <ContextMenuContent className="right-menu-content">
